@@ -67,74 +67,63 @@ export default function MessagesPage() {
   return (
     <div className="grid md:grid-cols-3 gap-4">
       <div className="md:col-span-1 space-y-3">
-        <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Conversaciones</h2>
-        <div className="space-y-2 p-2 rounded-2xl bg-slate-100/80 dark:bg-white/5 border border-slate-200/70 dark:border-white/10">
+        <h2 className="text-lg font-semibold text-white">Conversaciones</h2>
+        <div className="space-y-2">
           {chats.map(chat => (
             <motion.button
               whileTap={{ scale: 0.98 }}
               key={chat.id}
               onClick={() => setSelectedId(chat.id)}
-              className={`w-full text-left rounded-2xl border px-4 py-3 bg-white text-slate-900 dark:bg-white/5 ${selectedId === chat.id ? 'border-mint/50' : 'border-slate-200/70 dark:border-white/10'}`}
+              className={`w-full text-left rounded-2xl border px-4 py-3 bg-white/5 ${selectedId === chat.id ? 'border-mint/50' : 'border-white/10'}`}
             >
               <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-slate-900 dark:text-white font-semibold">{chat.company}</p>
-                  {chat.jobTitle && (
-                    <p className="text-xs text-slate-600 dark:text-gray-300 line-clamp-1">{chat.jobTitle}</p>
-                  )}
-                </div>
-                <span className="text-xs px-2 py-1 rounded-full bg-mint/20 text-deep dark:text-mint border border-mint/40">{chat.status}</span>
+                <p className="text-white font-semibold">{chat.company}</p>
+                <span className="text-xs px-2 py-1 rounded-full bg-mint/20 text-mint border border-mint/40">{chat.status}</span>
               </div>
-              <p className="text-sm text-slate-700 dark:text-gray-300 line-clamp-1">{chat.messages[chat.messages.length - 1]?.text}</p>
-              {chat.jobDate && chat.jobLocation && (
-                <p className="text-xs text-slate-600 dark:text-gray-400 mt-1">{chat.jobDate} • {chat.jobLocation}</p>
-              )}
+              <p className="text-sm text-gray-300 line-clamp-1">{chat.messages[chat.messages.length - 1]?.text}</p>
             </motion.button>
           ))}
         </div>
       </div>
 
-      <div className="md:col-span-2 rounded-3xl glass border border-slate-200/70 dark:border-white/10 p-4 flex flex-col h-[70vh]">
+      <div className="md:col-span-2 rounded-3xl glass border border-white/10 p-4 flex flex-col h-[70vh]">
         {selectedChat ? (
           <>
-            <div className="flex items-center justify-between pb-3 border-b border-slate-200/70 dark:border-white/10">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10">
               <div>
                 <p className="text-sm text-mint uppercase tracking-[0.3em]">Chat demo</p>
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{selectedChat.company}</h3>
-                {selectedChat.jobTitle && (
-                  <p className="text-sm text-slate-700 dark:text-gray-300">{selectedChat.jobTitle}</p>
-                )}
+                <h3 className="text-xl font-semibold text-white">{selectedChat.company}</h3>
               </div>
-              <span className="text-xs text-slate-600 dark:text-gray-300">Estado: {selectedChat.status}</span>
+              <span className="text-xs text-gray-300">Estado: {selectedChat.status}</span>
             </div>
             <div className="flex-1 overflow-y-auto space-y-3 py-4 flex flex-col">
               {selectedChat.messages.map((message, idx) => (
                 <ChatBubble key={idx} from={message.from} text={message.text} />
               ))}
               {typing && (
-                <div className="self-start bg-white text-slate-800 border border-slate-200 dark:bg-white/10 dark:text-white dark:border-white/10 rounded-2xl px-3 py-2 typing-dots">
+                <div className="self-start bg-white/10 text-white rounded-2xl px-3 py-2 typing-dots">
                   <span></span><span></span><span></span>
                 </div>
               )}
             </div>
-            <div className="pt-3 border-t border-slate-200/70 dark:border-white/10 flex gap-3">
+            <div className="pt-3 border-t border-white/10 flex gap-3">
               <input
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 placeholder="Escribe algo..."
-                className="flex-1 rounded-xl bg-white text-slate-800 border border-slate-200 px-3 py-2 text-sm focus:outline-none dark:bg-white/5 dark:text-white dark:border-white/10"
+                className="flex-1 rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm text-white focus:outline-none"
               />
               <motion.button
                 whileTap={{ scale: 0.97 }}
                 onClick={sendMessage}
-                className="px-4 py-2 rounded-xl bg-mint/20 text-deep dark:text-mint border border-mint/40"
+                className="px-4 py-2 rounded-xl bg-mint/20 text-mint border border-mint/40"
               >
                 Enviar
               </motion.button>
             </div>
           </>
         ) : (
-          <p className="text-slate-700 dark:text-gray-300">Selecciona un chat para empezar.</p>
+          <p className="text-gray-300">Selecciona un chat para empezar.</p>
         )}
       </div>
     </div>

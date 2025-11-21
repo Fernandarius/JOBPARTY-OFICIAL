@@ -17,7 +17,7 @@ export default function Modal({ open, onClose, children }) {
             animate={{ scale: 1, y: 0, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 220, damping: 18 }}
-            className="relative w-full max-w-2xl rounded-2xl glass border border-slate-200/70 dark:border-white/10 p-6"
+            className="relative w-full max-w-2xl rounded-2xl glass border border-white/10 p-6"
           >
             {children}
           </motion.div>

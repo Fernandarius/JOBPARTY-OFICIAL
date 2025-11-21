@@ -1,43 +1,31 @@
 export const demoChats = [
   {
     id: 'chat-01',
-    company: 'Brillo Eventos',
+    company: 'Lumen Events',
     status: 'Visto',
-    jobId: 'ev-07',
-    jobTitle: 'Meseros para brunch corporativo',
-    jobDate: '2024-12-14',
-    jobLocation: 'Lima - San Isidro',
     messages: [
-      { from: 'company', text: '¡Hola! Vimos tu perfil y queremos confirmarte para el brunch corporativo de este sábado.' },
-      { from: 'user', text: 'Sí, estoy libre desde muy temprano.' },
-      { from: 'company', text: 'Perfecto, el pago es al cerrar el turno por transferencia BCP.' }
+      { from: 'company', text: '¡Hola! Vimos tu perfil y nos encantaría saber si estás disponible para este sábado.' },
+      { from: 'user', text: 'Sí, tengo disponible en la tarde.' },
+      { from: 'company', text: 'Perfecto, el pago es al terminar el evento vía transferencia.' }
     ]
   },
   {
     id: 'chat-02',
     company: 'Nocturna Agency',
     status: 'En evaluación',
-    jobId: 'ev-03',
-    jobTitle: 'Barback para evento mixología premium',
-    jobDate: '2024-12-08',
-    jobLocation: 'Lima - San Isidro',
     messages: [
-      { from: 'company', text: 'Hola, vimos que tienes experiencia en eventos nocturnos y bar.' },
-      { from: 'user', text: 'Sí, he apoyado barras con coctelería clásica.' },
-      { from: 'company', text: '¿Te acomoda el horario hasta la 1:00 am? El pago es S/. 280 + propinas.' }
+      { from: 'company', text: 'Hola, vimos que tienes experiencia en eventos nocturnos.' },
+      { from: 'user', text: 'Sí, he trabajado en festivales y clubs.' },
+      { from: 'company', text: '¿Cómo te sientes con horarios extendidos de medianoche?' }
     ]
   },
   {
     id: 'chat-03',
-    company: 'Lumen Producciones',
+    company: 'Brunch & Co.',
     status: 'Aplicado',
-    jobId: 'ev-17',
-    jobTitle: 'Guía de sala en expo de arte',
-    jobDate: '2024-12-30',
-    jobLocation: 'Lima - Barranco',
     messages: [
-      { from: 'company', text: 'Buscamos guías con interés en arte peruano. ¿Te animas?' },
-      { from: 'user', text: 'Sí, me gusta el arte local y puedo dar inducción rápida.' }
+      { from: 'company', text: 'Buscamos meseros para brunch corporativo. ¿Tienes experiencia con café?' },
+      { from: 'user', text: 'Sí, manejé barra de café en un pop-up navideño.' }
     ]
   }
 ];

@@ -45,12 +45,12 @@ export default function ProfilePage() {
       <div className="flex items-center justify-between">
         <div>
           <p className="text-sm text-mint uppercase tracking-[0.3em]">Perfil</p>
-          <h1 className="text-3xl font-semibold text-slate-900 dark:text-white">Tu identidad laboral</h1>
+          <h1 className="text-3xl font-semibold text-white">Tu identidad laboral</h1>
         </div>
-        {saved && <span className="text-sm text-green-600 dark:text-mint">✓ Guardado</span>}
+        {saved && <span className="text-sm text-mint">✓ Guardado</span>}
       </div>
 
-      <div className="rounded-3xl glass border border-slate-200/70 dark:border-white/10 p-6 space-y-4">
+      <div className="rounded-3xl glass border border-white/10 p-6 space-y-4">
         <div className="grid sm:grid-cols-2 gap-4">
           <Input label="Nombre" name="name" value={profile.name} onChange={handleChange} />
           <Input label="Apellido" name="lastName" value={profile.lastName} onChange={handleChange} />
@@ -60,19 +60,19 @@ export default function ProfilePage() {
         <Input label="Bio" name="bio" value={profile.bio} onChange={handleChange} textarea />
         <Input label="Habilidades (coma separadas)" name="skills" value={profile.skills} onChange={handleChange} />
         <div className="space-y-2">
-          <label className="text-sm text-slate-700 dark:text-gray-300">Carga de CV (simulado)</label>
+          <label className="text-sm text-gray-300">Carga de CV (simulado)</label>
           <input
             type="file"
             onChange={e => setProfile(prev => ({ ...prev, cv: e.target.files?.[0]?.name || '' }))}
-            className="text-sm text-slate-700 dark:text-gray-200"
+            className="text-sm text-gray-200"
           />
-          {profile.cv && <p className="text-xs text-green-600 dark:text-mint">Archivo: {profile.cv}</p>}
+          {profile.cv && <p className="text-xs text-mint">Archivo: {profile.cv}</p>}
         </div>
         <div className="flex flex-wrap gap-3">
-          <motion.button whileTap={{ scale: 0.97 }} onClick={saveProfile} className="px-4 py-2 rounded-xl bg-mint/20 text-deep dark:text-mint border border-mint/40">
+          <motion.button whileTap={{ scale: 0.97 }} onClick={saveProfile} className="px-4 py-2 rounded-xl bg-mint/20 text-mint border border-mint/40">
             Guardar perfil
           </motion.button>
-          <motion.button whileTap={{ scale: 0.97 }} onClick={reset} className="px-4 py-2 rounded-xl bg-white text-slate-800 border border-slate-200 dark:bg-white/10 dark:text-white dark:border-white/10">
+          <motion.button whileTap={{ scale: 0.97 }} onClick={reset} className="px-4 py-2 rounded-xl bg-white/10 text-white border border-white/10">
             Reset demo
           </motion.button>
         </div>
@@ -84,17 +84,17 @@ export default function ProfilePage() {
 function Input({ label, textarea, ...props }) {
   return (
     <label className="block space-y-1">
-      <span className="text-sm text-slate-700 dark:text-gray-300">{label}</span>
+      <span className="text-sm text-gray-300">{label}</span>
       {textarea ? (
         <textarea
           {...props}
           rows={4}
-          className="w-full rounded-2xl bg-white text-slate-900 border border-slate-200 px-3 py-2 text-sm focus:outline-none dark:bg-white/5 dark:text-white dark:border-white/10"
+          className="w-full rounded-2xl bg-white/5 border border-white/10 px-3 py-2 text-sm text-white focus:outline-none"
         />
       ) : (
         <input
           {...props}
-          className="w-full rounded-2xl bg-white text-slate-900 border border-slate-200 px-3 py-2 text-sm focus:outline-none dark:bg-white/5 dark:text-white dark:border-white/10"
+          className="w-full rounded-2xl bg-white/5 border border-white/10 px-3 py-2 text-sm text-white focus:outline-none"
         />
       )}
     </label>

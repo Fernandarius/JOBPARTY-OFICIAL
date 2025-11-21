@@ -7,14 +7,14 @@ import TopBar from '@/components/ui/TopBar';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'JobParty — Demo',
-  description: 'Tinder de trabajos para eventos sociales en Perú'
+  title: 'JotParty — Demo',
+  description: 'Tinder de trabajos para eventos sociales'
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen font-sans antialiased`}>
+      <body className={`${inter.className} bg-midnight text-gray-100`}> 
         <ThemeProvider>
           <div className="min-h-screen flex flex-col pb-20">
             <TopBar />

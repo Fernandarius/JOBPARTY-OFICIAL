@@ -32,28 +32,28 @@ export default function EventCard({ event, onView }) {
     >
       <motion.div
         whileHover={{ y: -4 }}
-        className="relative h-full rounded-2xl glass p-4 border border-slate-200/70 dark:border-white/10 shadow-neon"
+        className="relative h-full rounded-2xl glass p-4 border border-white/10 shadow-neon"
       >
         <div className="flex items-start justify-between gap-2">
           <div>
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{event.title}</h3>
-            <p className="text-sm text-slate-700 dark:text-gray-300">{event.type} • {event.location}</p>
+            <h3 className="text-lg font-semibold text-white">{event.title}</h3>
+            <p className="text-sm text-gray-300">{event.type} • {event.location}</p>
           </div>
-          <span className="px-3 py-1 rounded-full bg-white text-deep border border-slate-200 text-xs dark:bg-white/10 dark:text-mint dark:border-white/10">{event.date}</span>
+          <span className="px-3 py-1 rounded-full bg-white/10 text-xs text-mint border border-white/10">{event.date}</span>
         </div>
-        <p className="mt-3 text-slate-700 dark:text-gray-200 leading-relaxed line-clamp-3">{event.description}</p>
+        <p className="mt-3 text-gray-200 leading-relaxed line-clamp-3">{event.description}</p>
         <div className="mt-4 flex items-center justify-between text-sm">
-          <div className="text-deep dark:text-mint font-semibold">{event.pay}</div>
+          <div className="text-mint font-semibold">{event.pay}</div>
           <div className="flex gap-2">
             <button
               onClick={() => onView(event)}
-              className="px-3 py-2 rounded-xl bg-white text-slate-800 border border-slate-200 text-sm hover:shadow-glow dark:bg-white/10 dark:text-white dark:border-white/10"
+              className="px-3 py-2 rounded-xl bg-white/10 border border-white/10 text-white text-sm hover:shadow-glow"
             >
               Ver
             </button>
             <Link
               href={`/job/${event.id}`}
-              className="px-3 py-2 rounded-xl bg-mint/20 text-deep dark:text-mint text-sm border border-mint/40 hover:bg-mint/30"
+              className="px-3 py-2 rounded-xl bg-mint/20 text-mint text-sm border border-mint/40 hover:bg-mint/30"
             >
               Detalles
             </Link>

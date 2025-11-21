@@ -14,15 +14,15 @@ const tabs = [
 export default function FooterNav() {
   const pathname = usePathname();
   return (
-    <nav className="fixed bottom-0 inset-x-0 z-40 backdrop-blur-lg bg-white/85 dark:bg-navy/80 border-t border-slate-200/60 dark:border-white/10 shadow-sm">
-      <div className="max-w-5xl mx-auto flex justify-between px-4 py-2.5">
+    <nav className="fixed bottom-0 inset-x-0 z-40 backdrop-blur-lg bg-navy/80 border-t border-white/10">
+      <div className="max-w-5xl mx-auto flex justify-between px-4 py-3">
         {tabs.map(tab => {
           const active = pathname === tab.href;
           return (
             <Link key={tab.href} href={tab.href} className="flex-1">
               <motion.div
                 whileTap={{ scale: 0.95 }}
-                className={`flex flex-col items-center gap-1 text-xs sm:text-sm ${active ? 'text-deep dark:text-mint' : 'text-slate-600 dark:text-gray-300'}`}
+                className={`flex flex-col items-center gap-1 text-sm ${active ? 'text-mint' : 'text-gray-300'}`}
               >
                 <span className="text-lg">{tab.icon}</span>
                 <span className="font-medium">{tab.label}</span>
